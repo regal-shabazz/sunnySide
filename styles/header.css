@@ -1,0 +1,89 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3ebfff;
+  z-index: 1000;
+}
+
+header .container {
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-block: 2rem;
+}
+
+nav {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+}
+
+#nav-menu {
+  flex-direction: column;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: 0.5s ease;
+
+  box-shadow: 0 0 100px 5px grey;
+}
+
+#nav-menu::before {
+  content: "";
+  position: absolute;
+  top: -8%;
+  left: 100%;
+  transform: translate(-100%);
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-right: 25px solid #fff;
+}
+
+.nav-menu-item {
+  margin-bottom: 2rem;
+}
+
+.nav-menu-item:nth-child(1) {
+  margin-top: 2rem;
+}
+
+.nav-menu-item:nth-child(4) {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  background-color: gold;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* active states */
+#nav-menu.active {
+  max-height: 400px;
+  opacity: 1;
+}
+
+#hamburger-icon.active {
+    animation-name: hamburgerAnimate;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+}
+
+@keyframes hamburgerAnimate {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
